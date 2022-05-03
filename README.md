@@ -6,7 +6,7 @@
 [![Source: GitHub](https://img.shields.io/badge/source-github-blue.svg?logo=github&logoColor=white)](https://github.com/thegeeklab/drone-plugin-lib)
 [![License: Apache-2.0](https://img.shields.io/github/license/thegeeklab/drone-plugin-lib)](https://github.com/thegeeklab/drone-plugin-lib/blob/main/LICENSE)
 
-Helper library to reduce the biolerplate code for writing Drone CI plugins.
+Helper library to reduce the boilerplate code for writing Drone CI plugins.
 
 ## Usage
 
