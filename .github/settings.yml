@@ -1,6 +1,6 @@
 repository:
   name: drone-plugin-lib
-  description: Custom template library for Drone CI
+  description: Helper library for writing Drone CI plugins
   topics: drone, drone-plugin
 
   private: false
