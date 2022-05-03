@@ -1,0 +1,6 @@
+/dist/
+/release/
+/drone-plugin-lib*
+
+coverage.out
+CHANGELOG.md

@@ -1,5 +1,6 @@
-// Copyright (c) 2019, the Drone Plugins project authors.
-// Please see the AUTHORS file for details. All rights reserved.
+// Copyright (c) 2019, Drone Plugins project authors
+// Copyright (c) 2021, Robert Kaussow <mail@thegeeklab.de>
+
 // Use of this source code is governed by an Apache 2.0 license that can be
 // found in the LICENSE file.
 
@@ -24,7 +25,6 @@ func loggingFlags() []cli.Flag {
 // LoggingFromContext sets the logrus logging level.
 func LoggingFromContext(ctx *cli.Context) {
 	lvl, err := logrus.ParseLevel(ctx.String("log-level"))
-
 	if err != nil {
 		lvl = logrus.InfoLevel
 	}

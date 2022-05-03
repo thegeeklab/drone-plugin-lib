@@ -1,5 +1,6 @@
-// Copyright (c) 2019, the Drone Plugins project authors.
-// Please see the AUTHORS file for details. All rights reserved.
+// Copyright (c) 2019, Drone Plugins project authors
+// Copyright (c) 2021, Robert Kaussow <mail@thegeeklab.de>
+
 // Use of this source code is governed by an Apache 2.0 license that can be
 // found in the LICENSE file.
 
@@ -11,7 +12,7 @@
 // read these environment variables and extract them into structs.
 //
 // 	import (
-// 		"github.com/drone-plugins/drone-plugin-lib/urfave"
+// 		"github.com/thegeeklab/drone-plugin-lib/urfave"
 // 		"github.com/urfave/cli/v2"
 // 	)
 //

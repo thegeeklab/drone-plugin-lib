@@ -1,12 +1,13 @@
-// Copyright (c) 2019, the Drone Plugins project authors.
-// Please see the AUTHORS file for details. All rights reserved.
+// Copyright (c) 2019, Drone Plugins project authors
+// Copyright (c) 2021, Robert Kaussow <mail@thegeeklab.de>
+
 // Use of this source code is governed by an Apache 2.0 license that can be
 // found in the LICENSE file.
 
 package urfave
 
 import (
-	"github.com/drone-plugins/drone-plugin-lib/drone"
+	"github.com/thegeeklab/drone-plugin-lib/drone"
 	"github.com/urfave/cli/v2"
 )
 
