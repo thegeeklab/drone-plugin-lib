@@ -12,7 +12,7 @@ import (
 )
 
 // systemFlags has the cli.Flags for the drone.System.
-func systemFlags() []cli.Flag {
+func systemFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "system.proto",
@@ -20,6 +20,7 @@ func systemFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SYSTEM_PROTO",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "system.host",
@@ -28,6 +29,7 @@ func systemFlags() []cli.Flag {
 				"DRONE_SYSTEM_HOST",
 				"DRONE_SYSTEM_HOSTNAME",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "system.version",
@@ -35,6 +37,7 @@ func systemFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SYSTEM_VERSION",
 			},
+			Category: category,
 		},
 	}
 }

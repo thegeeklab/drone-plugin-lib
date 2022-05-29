@@ -8,7 +8,7 @@ import (
 )
 
 // calVerFlags has the cli.Flags for the drone.CalVer.
-func calVerFlags() []cli.Flag {
+func calVerFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "calver.version",
@@ -16,6 +16,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "calver.major",
@@ -23,6 +24,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER_MAJOR",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "calver.minor",
@@ -30,6 +32,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER_MINOR",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "calver.micro",
@@ -37,6 +40,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER_MICRO",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "calver.modifier",
@@ -44,6 +48,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER_MODIFIER",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "calver.short",
@@ -51,6 +56,7 @@ func calVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_CALVER_SHORT",
 			},
+			Category: category,
 		},
 	}
 }

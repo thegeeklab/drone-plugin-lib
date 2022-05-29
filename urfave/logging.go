@@ -12,12 +12,13 @@ import (
 )
 
 // loggingFlags has the cli.Flags for logging config.
-func loggingFlags() []cli.Flag {
+func loggingFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
-			Name:    "log-level",
-			Usage:   "log level",
-			EnvVars: []string{"PLUGIN_LOG_LEVEL"},
+			Name:     "log-level",
+			Usage:    "log level",
+			EnvVars:  []string{"PLUGIN_LOG_LEVEL"},
+			Category: category,
 		},
 	}
 }

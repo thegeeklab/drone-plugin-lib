@@ -12,7 +12,7 @@ import (
 )
 
 // commitFlags has the cli.Flags for the drone.Commit.
-func commitFlags() []cli.Flag {
+func commitFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "commit.sha",
@@ -21,6 +21,7 @@ func commitFlags() []cli.Flag {
 				"DRONE_COMMIT",
 				"DRONE_COMMIT_SHA",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.before",
@@ -28,6 +29,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_BEFORE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.after",
@@ -35,6 +37,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_AFTER",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.ref",
@@ -42,6 +45,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_REF",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.branch",
@@ -49,12 +53,14 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_BRANCH",
 			},
+			Category: category,
 		}, &cli.StringFlag{
 			Name:  "commit.link",
 			Usage: "commit link",
 			EnvVars: []string{
 				"DRONE_COMMIT_LINK",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.message",
@@ -62,6 +68,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_MESSAGE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.author",
@@ -69,6 +76,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_AUTHOR",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.author-name",
@@ -76,6 +84,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_AUTHOR_NAME",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.author-email",
@@ -83,6 +92,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_AUTHOR_EMAIL",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "commit.author-avatar",
@@ -90,6 +100,7 @@ func commitFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_COMMIT_AUTHOR_AVATAR",
 			},
+			Category: category,
 		},
 	}
 }

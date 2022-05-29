@@ -20,12 +20,13 @@ import (
 )
 
 // networkFlags has the cli.Flags for the drone.Network.
-func networkFlags() []cli.Flag {
+func networkFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.BoolFlag{
-			Name:    "transport.skip-verify",
-			Usage:   "skip ssl verify",
-			EnvVars: []string{"PLUGIN_SKIP_VERIFY"},
+			Name:     "transport.skip-verify",
+			Usage:    "skip ssl verify",
+			EnvVars:  []string{"PLUGIN_SKIP_VERIFY"},
+			Category: category,
 		},
 	}
 }

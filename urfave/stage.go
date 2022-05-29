@@ -14,7 +14,7 @@ import (
 )
 
 // stageFlags has the cli.Flags for the drone.Stage.
-func stageFlags() []cli.Flag {
+func stageFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "stage.kind",
@@ -22,6 +22,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_KIND",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.type",
@@ -29,6 +30,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_TYPE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.name",
@@ -36,6 +38,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_NAME",
 			},
+			Category: category,
 		},
 		&cli.IntFlag{
 			Name:  "stage.number",
@@ -43,6 +46,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_NUMBER",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.machine",
@@ -50,6 +54,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_MACHINE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.os",
@@ -57,6 +62,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_OS",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.arch",
@@ -64,6 +70,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_ARCH",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.variant",
@@ -71,6 +78,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_VARIANT",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.version",
@@ -78,6 +86,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_VERSION",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "stage.status",
@@ -85,6 +94,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_STATUS",
 			},
+			Category: category,
 		},
 		&cli.Int64Flag{
 			Name:  "stage.started",
@@ -92,6 +102,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_STARTED",
 			},
+			Category: category,
 		},
 		&cli.Int64Flag{
 			Name:  "stage.finished",
@@ -99,6 +110,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_FINISHED",
 			},
+			Category: category,
 		},
 		&cli.StringSliceFlag{
 			Name:  "stage.depends-on",
@@ -106,6 +118,7 @@ func stageFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STAGE_DEPENDS_ON",
 			},
+			Category: category,
 		},
 	}
 }
