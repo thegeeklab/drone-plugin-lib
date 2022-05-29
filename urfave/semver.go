@@ -7,7 +7,7 @@
 package urfave
 
 import (
-	"github.com/thegeeklab/drone-plugin-lib/drone"
+	"github.com/thegeeklab/drone-plugin-lib/v2/drone"
 	"github.com/urfave/cli/v2"
 )
 

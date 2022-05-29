@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
-	"github.com/thegeeklab/drone-plugin-lib/drone"
-	"github.com/thegeeklab/drone-plugin-lib/trace"
+	"github.com/thegeeklab/drone-plugin-lib/v2/drone"
+	"github.com/thegeeklab/drone-plugin-lib/v2/trace"
 	"github.com/urfave/cli/v2"
 )
 

@@ -13,17 +13,17 @@ Helper library to reduce the boilerplate code for writing Drone CI plugins.
 ### Download the package
 
 ```Shell
-go get -d github.com/thegeeklab/drone-plugin-lib/errors
-go get -d github.com/thegeeklab/drone-plugin-lib/urfave
-go get -d github.com/thegeeklab/drone-plugin-lib/drone
+go get -d github.com/thegeeklab/drone-plugin-lib/v2/errors
+go get -d github.com/thegeeklab/drone-plugin-lib/v2/urfave
+go get -d github.com/thegeeklab/drone-plugin-lib/v2/drone
 ```
 
 ### Import the package
 
 ```Go
-import "github.com/thegeeklab/drone-plugin-lib/errors"
-import "github.com/thegeeklab/drone-plugin-lib/urfave"
-import "github.com/thegeeklab/drone-plugin-lib/drone"
+import "github.com/thegeeklab/drone-plugin-lib/v2/errors"
+import "github.com/thegeeklab/drone-plugin-lib/v2/urfave"
+import "github.com/thegeeklab/drone-plugin-lib/v2/drone"
 ```
 
 ## Contributors
