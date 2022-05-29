@@ -12,7 +12,7 @@ import (
 )
 
 // semVerFlags has the cli.Flags for the drone.SemVer.
-func semVerFlags() []cli.Flag {
+func semVerFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "semver.version",
@@ -20,6 +20,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.major",
@@ -27,6 +28,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_MAJOR",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.minor",
@@ -34,6 +36,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_MINOR",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.patch",
@@ -41,6 +44,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_PATCH",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.prerelease",
@@ -48,6 +52,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_PRERELEASE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.build",
@@ -55,6 +60,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_BUILD",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.short",
@@ -62,6 +68,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_SHORT",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "semver.error",
@@ -69,6 +76,7 @@ func semVerFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_SEMVER_ERROR",
 			},
+			Category: category,
 		},
 	}
 }

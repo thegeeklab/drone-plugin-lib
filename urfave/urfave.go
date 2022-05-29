@@ -11,20 +11,31 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+var (
+	FlagsBuildCategory      = "Drone Build Flags"
+	FlagsRepoCategory       = "Drone Repo Flags"
+	FlagsCommitCategory     = "Drone Commit Flags"
+	FlagsStageCategory      = "Drone Stage Flags"
+	FlagsStepCategory       = "Drone Step Flags"
+	FlagsVersioningCategory = "Drone Versioning Flags"
+	FlagsSystemCategory     = "Drone System Flags"
+	FlagsPluginCategory     = "Plugin Flags"
+)
+
 // Flags has the cli.Flags for the Drone plugin.
 func Flags() []cli.Flag {
 	flags := []cli.Flag{}
 
-	flags = append(flags, buildFlags()...)
-	flags = append(flags, repoFlags()...)
-	flags = append(flags, commitFlags()...)
-	flags = append(flags, stageFlags()...)
-	flags = append(flags, stepFlags()...)
-	flags = append(flags, semVerFlags()...)
-	flags = append(flags, calVerFlags()...)
-	flags = append(flags, systemFlags()...)
-	flags = append(flags, networkFlags()...)
-	flags = append(flags, loggingFlags()...)
+	flags = append(flags, buildFlags(FlagsBuildCategory)...)
+	flags = append(flags, repoFlags(FlagsRepoCategory)...)
+	flags = append(flags, commitFlags(FlagsCommitCategory)...)
+	flags = append(flags, stageFlags(FlagsStageCategory)...)
+	flags = append(flags, stepFlags(FlagsStepCategory)...)
+	flags = append(flags, semVerFlags(FlagsVersioningCategory)...)
+	flags = append(flags, calVerFlags(FlagsVersioningCategory)...)
+	flags = append(flags, systemFlags(FlagsSystemCategory)...)
+	flags = append(flags, networkFlags(FlagsPluginCategory)...)
+	flags = append(flags, loggingFlags(FlagsPluginCategory)...)
 
 	return flags
 }

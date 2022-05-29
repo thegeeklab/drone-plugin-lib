@@ -12,7 +12,7 @@ import (
 )
 
 // repoFlags has the cli.Flags for the drone.Repo
-func repoFlags() []cli.Flag {
+func repoFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "repo.slug",
@@ -20,6 +20,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.scm",
@@ -27,6 +28,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_SCM",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.owner",
@@ -35,6 +37,7 @@ func repoFlags() []cli.Flag {
 				"DRONE_REPO_OWNER",
 				"DRONE_REPO_NAMESPACE",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.name",
@@ -42,6 +45,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_NAME",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.link",
@@ -49,6 +53,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_LINK",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.branch",
@@ -56,6 +61,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_BRANCH",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.http-url",
@@ -64,6 +70,7 @@ func repoFlags() []cli.Flag {
 				"DRONE_REMOTE_URL",
 				"DRONE_GIT_HTTP_URL",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.ssh-url",
@@ -71,6 +78,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_GIT_SSH_URL",
 			},
+			Category: category,
 		},
 		&cli.StringFlag{
 			Name:  "repo.visibility",
@@ -78,6 +86,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_VISIBILITY",
 			},
+			Category: category,
 		},
 		&cli.BoolFlag{
 			Name:  "repo.private",
@@ -85,6 +94,7 @@ func repoFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_REPO_PRIVATE",
 			},
+			Category: category,
 		},
 	}
 }

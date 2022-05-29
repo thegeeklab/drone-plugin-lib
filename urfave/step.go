@@ -12,7 +12,7 @@ import (
 )
 
 // stepFlags has the cli.Flags for the drone.Step.
-func stepFlags() []cli.Flag {
+func stepFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "step.name",
@@ -20,6 +20,7 @@ func stepFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STEP_NAME",
 			},
+			Category: category,
 		},
 		&cli.IntFlag{
 			Name:  "step.number",
@@ -27,6 +28,7 @@ func stepFlags() []cli.Flag {
 			EnvVars: []string{
 				"DRONE_STEP_NUMBER",
 			},
+			Category: category,
 		},
 	}
 }
