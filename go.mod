@@ -1,4 +1,4 @@
-module github.com/thegeeklab/drone-plugin-lib
+module github.com/thegeeklab/drone-plugin-lib/v2
 
 go 1.18
 
