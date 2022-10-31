@@ -10,7 +10,7 @@ type StringSliceFlag struct {
 }
 
 func (s *StringSliceFlag) String() string {
-	return strings.Join(s.slice, " AND ")
+	return strings.Join(s.slice, " ")
 }
 
 func (s *StringSliceFlag) Set(value string) error {
