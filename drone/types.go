@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// StringSliceFlag is a flag type which support comma separated values and escaping to not split at unwanted lines
+// StringSliceFlag is a flag type which support comma separated values and escaping to not split at unwanted lines.
 type StringSliceFlag struct {
 	slice []string
 }
@@ -15,6 +15,7 @@ func (s *StringSliceFlag) String() string {
 
 func (s *StringSliceFlag) Set(value string) error {
 	s.slice = splitWithEscaping(value, ",", "\\")
+
 	return nil
 }
 
@@ -22,19 +23,20 @@ func (s *StringSliceFlag) Get() []string {
 	return s.slice
 }
 
-func splitWithEscaping(s, separator, escapeString string) []string {
-	if len(s) == 0 {
+func splitWithEscaping(in, separator, escapeString string) []string {
+	if len(in) == 0 {
 		return []string{}
 	}
 
-	a := strings.Split(s, separator)
+	out := strings.Split(in, separator)
 
-	for i := len(a) - 2; i >= 0; i-- {
-		if strings.HasSuffix(a[i], escapeString) {
-			a[i] = a[i][:len(a[i])-len(escapeString)] + separator + a[i+1]
-			a = append(a[:i+1], a[i+2:]...)
+	//nolint:gomnd
+	for i := len(out) - 2; i >= 0; i-- {
+		if strings.HasSuffix(out[i], escapeString) {
+			out[i] = out[i][:len(out[i])-len(escapeString)] + separator + out[i+1]
+			out = append(out[:i+1], out[i+2:]...)
 		}
 	}
 
-	return a
+	return out
 }

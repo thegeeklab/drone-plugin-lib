@@ -20,6 +20,7 @@ func TestSplitWithEscaping(t *testing.T) {
 	for _, test := range tests {
 		strings := splitWithEscaping(test.Input, ",", "\\")
 		got, want := strings, test.Output
+
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("Got tag %v, want %v", got, want)
 		}

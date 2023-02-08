@@ -8,7 +8,7 @@ platform:
 
 steps:
   - name: deps
-    image: golang:1.19
+    image: golang:1.20
     commands:
       - make deps
     volumes:
@@ -16,7 +16,7 @@ steps:
         path: /go
 
   - name: lint
-    image: golang:1.19
+    image: golang:1.20
     commands:
       - make lint
     volumes:
@@ -24,7 +24,7 @@ steps:
         path: /go
 
   - name: test
-    image: golang:1.19
+    image: golang:1.20
     commands:
       - make test
     volumes:
@@ -156,6 +156,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 9cadf4dc495cf5ea9e54b4964eab9fd7a545d6b419c7cd78bc6846108428a926
+hmac: ebcc6ff0a66ff606330d4e9fc8a2015e36b7c592e6278a36303e4970aa195575
 
 ...
