@@ -11,19 +11,19 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+const (
+	FlagsBuildCategory      = "Drone Build Flags"
+	FlagsRepoCategory       = "Drone Repo Flags"
+	FlagsCommitCategory     = "Drone Commit Flags"
+	FlagsStageCategory      = "Drone Stage Flags"
+	FlagsStepCategory       = "Drone Step Flags"
+	FlagsVersioningCategory = "Drone Versioning Flags"
+	FlagsSystemCategory     = "Drone System Flags"
+	FlagsPluginCategory     = "Plugin Flags"
+)
+
 // Flags has the cli.Flags for the Drone plugin.
 func Flags() []cli.Flag {
-	var (
-		FlagsBuildCategory      = "Drone Build Flags"
-		FlagsRepoCategory       = "Drone Repo Flags"
-		FlagsCommitCategory     = "Drone Commit Flags"
-		FlagsStageCategory      = "Drone Stage Flags"
-		FlagsStepCategory       = "Drone Step Flags"
-		FlagsVersioningCategory = "Drone Versioning Flags"
-		FlagsSystemCategory     = "Drone System Flags"
-		FlagsPluginCategory     = "Plugin Flags"
-	)
-
 	flags := []cli.Flag{}
 
 	flags = append(flags, buildFlags(FlagsBuildCategory)...)
