@@ -1,6 +1,6 @@
 module github.com/thegeeklab/drone-plugin-lib/v2
 
-go 1.19
+go 1.20
 
 require (
 	github.com/sirupsen/logrus v1.9.0

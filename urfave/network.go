@@ -19,6 +19,13 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+const (
+	NetDailerTimeout                 = 30 * time.Second
+	HTTPTransportIdleTimeout         = 90 * time.Second
+	HTTPTransportTLSHandshakeTimeout = 10 * time.Second
+	HTTPTransportMaxIdleConns        = 100
+)
+
 // networkFlags has the cli.Flags for the drone.Network.
 func networkFlags(category string) []cli.Flag {
 	return []cli.Flag{
@@ -32,35 +39,36 @@ func networkFlags(category string) []cli.Flag {
 }
 
 // NetworkFromContext creates a drone.Network from the cli.Context.
-func NetworkFromContext(c *cli.Context) drone.Network {
+func NetworkFromContext(ctx *cli.Context) drone.Network {
 	dialer := &net.Dialer{
-		Timeout:   30 * time.Second,
-		KeepAlive: 30 * time.Second,
+		Timeout:   NetDailerTimeout,
+		KeepAlive: NetDailerTimeout,
 		DualStack: true,
 	}
 
 	transport := &http.Transport{
 		Proxy:                 http.ProxyFromEnvironment,
 		DialContext:           dialer.DialContext,
-		MaxIdleConns:          100,
-		IdleConnTimeout:       90 * time.Second,
-		TLSHandshakeTimeout:   10 * time.Second,
+		MaxIdleConns:          HTTPTransportMaxIdleConns,
+		IdleConnTimeout:       HTTPTransportIdleTimeout,
+		TLSHandshakeTimeout:   HTTPTransportTLSHandshakeTimeout,
 		ExpectContinueTimeout: 1 * time.Second,
 	}
 
-	ctx := context.Background()
-	skipVerify := c.Bool("transport.skip-verify")
+	context := context.Background()
+	skipVerify := ctx.Bool("transport.skip-verify")
 
 	if skipVerify {
 		logrus.Warning("ssl verification is turned off")
 
 		transport.TLSClientConfig = &tls.Config{
+			//nolint:gosec
 			InsecureSkipVerify: true,
 		}
 	}
 
-	if c.String("log-level") == logrus.TraceLevel.String() {
-		ctx = trace.HTTP(ctx)
+	if ctx.String("log-level") == logrus.TraceLevel.String() {
+		context = trace.HTTP(context)
 	}
 
 	client := &http.Client{
@@ -68,7 +76,7 @@ func NetworkFromContext(c *cli.Context) drone.Network {
 	}
 
 	return drone.Network{
-		Context:    ctx,
+		Context:    context,
 		SkipVerify: skipVerify,
 		Client:     client,
 	}

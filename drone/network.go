@@ -17,6 +17,7 @@ type Network struct {
 	//
 	// If `trace` logging is requested the context will use `httptrace` to
 	// capture all network requests.
+	//nolint:containedctx
 	Context context.Context
 
 	/// Whether SSL verification is skipped

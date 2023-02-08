@@ -49,6 +49,7 @@ func HTTP(ctx context.Context) context.Context {
 				"code":   code,
 				"header": header,
 			}).Trace("ClientTrace.Got1xxxResponse")
+
 			return nil
 		},
 
@@ -83,14 +84,14 @@ func HTTP(ctx context.Context) context.Context {
 			logrus.Trace("ClientTrace.TLSHandshakeStart")
 		},
 
-		TLSHandshakeDone: func(cs tls.ConnectionState, err error) {
+		TLSHandshakeDone: func(connState tls.ConnectionState, err error) {
 			logrus.WithFields(logrus.Fields{
-				"version":             cs.Version,
-				"handshake-complete":  cs.HandshakeComplete,
-				"did-resume":          cs.DidResume,
-				"cipher-suite":        cs.CipherSuite,
-				"negotiated-protocol": cs.NegotiatedProtocol,
-				"server-name":         cs.ServerName,
+				"version":             connState.Version,
+				"handshake-complete":  connState.HandshakeComplete,
+				"did-resume":          connState.DidResume,
+				"cipher-suite":        connState.CipherSuite,
+				"negotiated-protocol": connState.NegotiatedProtocol,
+				"server-name":         connState.ServerName,
 				"error":               err,
 			}).Trace("ClientTrace.TLSHandshakeDone")
 		},

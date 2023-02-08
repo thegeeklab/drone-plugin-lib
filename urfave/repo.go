@@ -11,7 +11,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-// repoFlags has the cli.Flags for the drone.Repo
+// repoFlags has the cli.Flags for the drone.Repo.
 func repoFlags(category string) []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
