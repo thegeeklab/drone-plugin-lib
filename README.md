@@ -6,6 +6,8 @@
 [![Source: GitHub](https://img.shields.io/badge/source-github-blue.svg?logo=github&logoColor=white)](https://github.com/thegeeklab/drone-plugin-lib)
 [![License: Apache-2.0](https://img.shields.io/github/license/thegeeklab/drone-plugin-lib)](https://github.com/thegeeklab/drone-plugin-lib/blob/main/LICENSE)
 
+> **DISCONTINUED:** As I don't use Drone CI anymore, this project is unmaintained. If you are interested in a free and open source CI system check out [Woodpecker CI](https://woodpecker-ci.org/).
+
 Helper library to reduce the boilerplate code for writing Drone CI plugins.
 
 ## Usage
